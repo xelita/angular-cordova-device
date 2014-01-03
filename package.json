@@ -4,7 +4,7 @@
     "description": "Bring Apache Cordova Device API to AngularJS Apps...",
     "main": "src/cordovaDeviceModule.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "bower": "bower install"
     },
     "repository": {
         "type": "git",
