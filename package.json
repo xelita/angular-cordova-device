@@ -1,0 +1,25 @@
+{
+    "name": "angular-device",
+    "version": "1.0.0",
+    "description": "Bring Apache Cordova Device API to AngularJS Apps...",
+    "main": "src/cordovaDeviceModule.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/xelita/angular-device.git"
+    },
+    "keywords": [
+        "angular",
+        "cordova",
+        "device",
+        "plugin"
+    ],
+    "author": "xelita <admin@xelita.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/xelita/angular-device/issues"
+    },
+    "homepage": "https://github.com/xelita/angular-device"
+}
