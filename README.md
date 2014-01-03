@@ -1,4 +1,4 @@
 angular-device
 ==============
 
-AngularJS module for Apache Cordova Device API
+Bring Apache Cordova Device API to AngularJS Apps...
