@@ -6,7 +6,7 @@
         "xelita <admin@xelita.com>"
     ],
     "description": "Bring Apache Cordova Device API to AngularJS Apps",
-    "main": "src/cordovaDeviceModule.js",
+    "main": "src/cordovaDeviceModule.min.js",
     "keywords": [
         "angular",
         "cordova",

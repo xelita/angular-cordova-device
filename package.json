@@ -2,7 +2,7 @@
     "name": "angular-device",
     "version": "1.0.0",
     "description": "Bring Apache Cordova Device API to AngularJS Apps...",
-    "main": "src/cordovaDeviceModule.js",
+    "main": "src/cordovaDeviceModule.min.js",
     "scripts": {
         "bower": "bower install"
     },
