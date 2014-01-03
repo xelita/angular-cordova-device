@@ -15,6 +15,12 @@ Include cordovaDeviceModule.js in your Cordova application.
 <script src="js/cordovaDeviceModule.js"></script>
 ```
 
+or use the minified version:
+
+```html
+<script src="js/cordovaDeviceModule.min.js"></script>
+```
+
 Add the module `cordovaDeviceModule` as a dependency to your app module:
 
 ```js
