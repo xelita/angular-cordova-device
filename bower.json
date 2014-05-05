@@ -1,7 +1,7 @@
 {
-    "name": "angular-device",
+    "name": "angular-cordova-device",
     "version": "1.0.0",
-    "homepage": "https://github.com/xelita/angular-device",
+    "homepage": "https://github.com/xelita/angular-cordova-device",
     "authors": [
         "xelita <admin@xelita.com>"
     ],
@@ -30,3 +30,5 @@
         "angular": "~1.2.3"
     }
 }
+
+     

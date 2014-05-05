@@ -1,14 +1,14 @@
 {
-    "name": "angular-device",
+    "name": "angular-cordova-device",
     "version": "1.0.0",
-    "description": "Bring Apache Cordova Device API to AngularJS Apps...",
-    "main": "src/cordovaDeviceModule.js",
-    "scripts": {
-        "bower": "bower install"
-    },
+    "description": "Bring Apache Cordova Device API to AngularJS Apps",
+    "homepage": "https://github.com/xelita/angular-cordova-device",
     "repository": {
         "type": "git",
-        "url": "https://github.com/xelita/angular-device.git"
+        "url": "https://github.com/xelita/angular-cordova-device.git"
+    },
+    "bugs": {
+        "url": "https://github.com/xelita/angular-cordova-device/issues"
     },
     "keywords": [
         "angular",
@@ -18,12 +18,15 @@
     ],
     "author": "xelita <admin@xelita.com>",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/xelita/angular-device/issues"
-    },
-    "homepage": "https://github.com/xelita/angular-device",
-    "dependecies": {},
+    "main": "src/cordovaDeviceModule.js",
     "devDependencies": {
-        "bower": "~1.2.8"
+        "karma": "~0.12.14",
+        "karma-jasmine": "~0.1.5",
+        "karma-phantomjs-launcher": "~0.1.4",
+        "bower": "~1.3.3"
+    },
+    "scripts": {
+        "postinstall": "bower install",
+        "test": "karma start test/karma.conf.js"
     }
 }
