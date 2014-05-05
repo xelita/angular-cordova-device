@@ -1,5 +1,6 @@
 /**
- * Angular Module relying on Apache Cordova Device Plugin.
+ * Angular Module relying on Apache Cordova Network Information Plugin (cordova plugin add org.apache.cordova.device).
+ * For more information: https://github.com/apache/cordova-plugin-device
  */
 var cordovaDeviceModule = angular.module('cordovaDeviceModule', []);
 
@@ -9,8 +10,7 @@ var cordovaDeviceModule = angular.module('cordovaDeviceModule', []);
  * Constants service used in the whole module.
  */
 cordovaDeviceModule.constant('cordovaDeviceConstants', {
-    apiVersion: '1.0.0',
-    unavailable: 'N/A'
+    apiVersion: '1.0.0'
 });
 
 // Services
@@ -30,7 +30,7 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
 
         /**
          * Get the version of Cordova running on the device.
-         * For more information: http://cordova.apache.org/docs/en/3.3.0/cordova_device_device.md.html#device.cordova
+         * For more information: https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md#devicecordova
          */
         cordova: function () {
             $log.debug('cordovaDeviceService.cordova.');
@@ -39,7 +39,7 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
 
         /**
          * Get the device's operating system name.
-         * For more information: http://cordova.apache.org/docs/en/3.3.0/cordova_device_device.md.html#device.platform
+         * For more information: https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md#deviceplatform
          */
         platform: function () {
             $log.debug('cordovaDeviceService.platform.');
@@ -48,7 +48,7 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
 
         /**
          * Get the device's Universally Unique Identifier (UUID).
-         * For more information: http://cordova.apache.org/docs/en/3.3.0/cordova_device_device.md.html#device.uuid
+         * For more information: https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md#deviceuuid
          */
         uuid: function () {
             $log.debug('cordovaDeviceService.uuid.');
@@ -57,7 +57,7 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
 
         /**
          * Get the operating system version.
-         * For more information: http://cordova.apache.org/docs/en/3.3.0/cordova_device_device.md.html#device.version
+         * For more information: https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md#deviceversion
          */
         version: function () {
             $log.debug('cordovaDeviceService.version.');
@@ -65,8 +65,8 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
         },
 
         /**
-         * Get the device's model name.
-         * For more information: http://cordova.apache.org/docs/en/3.3.0/cordova_device_device.md.html#device.model
+         * The device.model returns the name of the device's model or product.
+         * For more information: https://github.com/apache/cordova-plugin-device/blob/master/doc/index.md#devicemodel
          */
         model: function () {
             $log.debug('cordovaDeviceService.model.');
@@ -80,7 +80,8 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
         getDeviceValue: function (name) {
             $log.debug('cordovaDeviceService.value.');
             if (!window.device) {
-                return cordovaDeviceConstants.unavailable;
+                $log.warn('Device API is not available.');
+                return null;
             }
             return window.device[name];
         }
@@ -95,5 +96,6 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
  */
 cordovaDeviceModule.controller('CordovaDeviceCtrl', ['$scope', 'cordovaDeviceService' , function ($scope, cordovaDeviceService) {
 
+    // Export the cordovaDeviceService in the controller scope in order to make it accessible directly
     $scope.deviceService = cordovaDeviceService;
 }]);
