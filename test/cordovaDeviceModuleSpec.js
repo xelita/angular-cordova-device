@@ -16,6 +16,10 @@ describe("cordovaDeviceModule Tests Suite", function () {
         it("apiVersion", function () {
             expect(cordovaDeviceConstants.apiVersion).toBe('1.0.0');
         });
+
+        it("cordovaVersion", function () {
+            expect(cordovaDeviceConstants.cordovaVersion).toBe('>=3.4.0');
+        });
     });
 
     // cordovaDeviceService
@@ -32,6 +36,14 @@ describe("cordovaDeviceModule Tests Suite", function () {
                 cordovaDeviceConstants = _cordovaDeviceConstants_;
             });
             window.device = null;
+        });
+
+        it("apiVersion should return apiVersion defined in cordovaDeviceConstants", function () {
+            expect(cordovaDeviceService.apiVersion()).toBe('1.0.0');
+        });
+
+        it("cordovaVersion should return apiVersion defined in cordovaDeviceConstants", function () {
+            expect(cordovaDeviceService.cordovaVersion()).toBe('>=3.4.0');
         });
 
         it("getDeviceValue should return null if device plugin is not installed", function () {

@@ -10,7 +10,8 @@ var cordovaDeviceModule = angular.module('cordovaDeviceModule', []);
  * Constants service used in the whole module.
  */
 cordovaDeviceModule.constant('cordovaDeviceConstants', {
-    apiVersion: '1.0.0'
+    apiVersion: '1.0.0',
+    cordovaVersion: '>=3.4.0'
 });
 
 // Services
@@ -26,6 +27,14 @@ cordovaDeviceModule.factory('cordovaDeviceService', ['$log', 'cordovaDeviceConst
         apiVersion: function () {
             $log.debug('cordovaDeviceService.apiVersion.');
             return cordovaDeviceConstants.apiVersion;
+        },
+
+        /**
+         * Return the cordova API version.
+         */
+        cordovaVersion: function () {
+            $log.debug('cordovaDeviceConstants.cordovaVersion.');
+            return cordovaDeviceConstants.cordovaVersion;
         },
 
         /**
